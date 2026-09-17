@@ -7,6 +7,7 @@
 <title>BREWLISS | Coffee & Flavours</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,26 +17,25 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:#f7f0e7;
-    color:#24140c;
+    background:#f8f5ef;
+    color:#252525;
 }
 
-/* NAVBAR */
 nav{
     position:fixed;
     top:0;
     width:100%;
-    z-index:1000;
-    padding:18px 7%;
+    background:#171717;
+    color:white;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(20,10,6,0.95);
+    padding:20px 7%;
+    z-index:1000;
 }
 
 .logo{
-    color:white;
-    font-size:24px;
+    font-size:28px;
     font-weight:bold;
     letter-spacing:4px;
 }
@@ -44,100 +44,91 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:25px;
-    font-size:14px;
+    font-size:15px;
 }
 
 nav a:hover{
-    color:#e7bd7c;
+    color:#d8ad78;
 }
 
-/* HERO */
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding:130px 8% 70px;
-    color:white;
-
+    padding:120px 8% 70px;
     background:
-    radial-gradient(circle at 75% 45%,#744321,#2b160c 38%,#0d0704 75%);
+    linear-gradient(90deg,rgba(15,15,15,.95),rgba(15,15,15,.55)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
 }
 
 .hero-content{
-    max-width:700px;
+    max-width:750px;
 }
 
 .small-title{
-    color:#e7bd7c;
-    letter-spacing:3px;
-    font-size:13px;
+    color:#d8ad78;
+    letter-spacing:4px;
     font-weight:bold;
+    margin-bottom:20px;
 }
 
 .hero h1{
     font-family:Georgia,serif;
-    font-size:clamp(50px,8vw,90px);
-    line-height:.95;
-    margin:20px 0;
-}
-
-.hero h1 span{
-    color:#e7bd7c;
-    font-style:italic;
+    font-size:70px;
+    line-height:1;
+    margin-bottom:25px;
 }
 
 .hero p{
-    color:#ded3ca;
-    font-size:18px;
-    max-width:550px;
-}
-
-.buttons{
-    margin-top:30px;
+    font-size:19px;
+    line-height:1.6;
+    margin-bottom:30px;
 }
 
 .btn{
-    display:inline-block;
-    padding:14px 24px;
+    border:none;
+    padding:15px 25px;
     border-radius:30px;
-    text-decoration:none;
+    cursor:pointer;
+    font-size:16px;
     font-weight:bold;
     margin-right:10px;
 }
 
-.primary{
-    background:#e7bd7c;
-    color:#24140c;
+.btn-primary{
+    background:#d8ad78;
+    color:#222;
 }
 
-.secondary{
-    border:1px solid white;
-    color:white;
+.btn-dark{
+    background:white;
+    color:#222;
 }
 
-/* SECTIONS */
 section{
-    padding:85px 7%;
+    padding:100px 7%;
 }
 
-h2{
+.section-title{
     font-family:Georgia,serif;
-    font-size:45px;
-    margin:8px 0 30px;
+    font-size:50px;
+    margin-bottom:45px;
 }
 
-/* MENU */
-.menu{
+.menu-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    gap:25px;
 }
 
 .card{
     background:white;
-    border-radius:16px;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 8px 25px rgba(50,25,10,.1);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
     transition:.3s;
 }
 
@@ -145,60 +136,74 @@ h2{
     transform:translateY(-8px);
 }
 
-.drink{
-    height:200px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:75px;
-    background:linear-gradient(135deg,#32180d,#b8763d);
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
 }
 
-.card-body{
-    padding:20px;
+.card-content{
+    padding:22px;
 }
 
-.card-body h3{
-    font-size:20px;
-    margin-bottom:7px;
+.card h3{
+    font-size:22px;
+    margin-bottom:8px;
 }
 
-.card-body p{
-    color:#75645a;
+.card p{
+    color:#777;
+    margin-bottom:15px;
 }
 
 .price{
-    font-size:19px;
+    font-size:21px;
     font-weight:bold;
-    margin-top:12px;
+    margin-bottom:15px;
 }
 
-/* WHY US */
+.select-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:#171717;
+    color:white;
+    cursor:pointer;
+}
+
+.select-btn:hover{
+    background:#d8ad78;
+    color:#222;
+}
+
 .why{
-    background:#24130b;
+    background:#171717;
     color:white;
 }
 
-.features{
+.why-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:25px;
 }
 
-.feature{
-    border-top:1px solid #a87d4c;
-    padding:20px 5px;
+.why-box{
+    padding:35px;
+    border:1px solid #444;
+    border-radius:20px;
 }
 
-.feature h3{
-    margin-bottom:10px;
+.why-box h3{
+    margin-bottom:15px;
+    font-size:22px;
 }
 
-.feature p{
-    color:#d5c8be;
+.why-box p{
+    color:#bbb;
+    line-height:1.6;
 }
 
-/* CUSTOM */
 .custom{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -208,112 +213,152 @@ h2{
 
 .custom-box{
     background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(50,25,10,.1);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.choices{
+.option-title{
+    font-size:20px;
+    font-weight:bold;
+    margin:20px 0 12px;
+}
+
+.options{
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin:15px 0 25px;
 }
 
-.choice{
-    padding:10px 16px;
-    border:1px solid #cdbbab;
-    border-radius:25px;
+.option{
+    padding:12px 18px;
+    border:1px solid #bbb;
     background:white;
+    border-radius:25px;
     cursor:pointer;
 }
 
-.choice:hover{
-    background:#e7bd7c;
+.option:hover{
+    border-color:#a87842;
 }
 
-/* ABOUT */
-.about{
-    background:#180c07;
+.option.active{
+    background:#d8ad78;
+    border-color:#d8ad78;
+    color:#222;
+    font-weight:bold;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.quantity button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#171717;
     color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.quantity span{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.total{
+    font-size:28px;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+.about{
+    background:#eee8dd;
 }
 
 .about p{
-    max-width:700px;
-    color:#d8cbc1;
+    max-width:800px;
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px;
     font-size:18px;
 }
 
-/* CONTACT */
-.contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
-
-form{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-}
-
-input,select,textarea{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    border:1px solid #d5c5b8;
-    border-radius:10px;
-    font-size:15px;
-}
-
-textarea{
-    resize:none;
-}
-
-/* FOOTER */
 footer{
-    background:#0d0704;
+    background:#171717;
     color:white;
     text-align:center;
     padding:30px;
 }
 
-/* MOBILE */
-@media(max-width:800px){
-
-    nav .links{
-        display:none;
-    }
-
-    .menu,
-    .features{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .custom,
-    .contact{
-        grid-template-columns:1fr;
-    }
+footer span{
+    color:#d8ad78;
 }
 
-@media(max-width:500px){
+@media(max-width:900px){
 
-    .menu,
-    .features{
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .custom{
         grid-template-columns:1fr;
     }
 
     .hero h1{
-        font-size:55px;
+        font-size:52px;
+    }
+}
+
+@media(max-width:600px){
+
+    nav{
+        padding:15px 4%;
+    }
+
+    nav a{
+        margin-left:8px;
+        font-size:11px;
+    }
+
+    .logo{
+        font-size:20px;
     }
 
     section{
-        padding:60px 5%;
+        padding:80px 5%;
+    }
+
+    .menu-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .section-title{
+        font-size:38px;
     }
 }
+
 </style>
 </head>
-
 
 <body>
 
@@ -321,11 +366,10 @@ footer{
 
 <nav>
 
-<div class="logo">
-BREWLISS
-</div>
+<div class="logo">BREWLISS</div>
 
-<div class="links">
+<div>
+<a href="#home">Home</a>
 <a href="#menu">Menu</a>
 <a href="#why">Why Us</a>
 <a href="#custom">Customize</a>
@@ -336,9 +380,9 @@ BREWLISS
 </nav>
 
 
-<!-- HERO -->
+<!-- HOME -->
 
-<header class="hero">
+<section class="hero" id="home">
 
 <div class="hero-content">
 
@@ -347,9 +391,9 @@ PREMIUM COFFEE • UNIQUE FLAVOURS • MADE FOR YOU
 </div>
 
 <h1>
-A Little More
-<span>Bliss</span>
-in Every Brew.
+A Little More<br>
+Bliss in Every<br>
+Brew.
 </h1>
 
 <p>
@@ -357,169 +401,156 @@ Rich coffee, exciting flavours and your own custom creation —
 all in one cup.
 </p>
 
-<div class="buttons">
-
-<a href="#menu" class="btn primary">
+<button class="btn btn-primary"
+onclick="document.getElementById('menu').scrollIntoView()">
 Explore Menu →
-</a>
+</button>
 
-<a href="#contact" class="btn secondary">
+<button class="btn btn-dark"
+onclick="document.getElementById('custom').scrollIntoView()">
 Order Now
-</a>
+</button>
 
 </div>
 
-</div>
-
-</header>
+</section>
 
 
 <!-- MENU -->
 
 <section id="menu">
 
-<div class="small-title">
-OUR MENU
-</div>
+<div class="small-title">OUR MENU</div>
 
-<h2>
-Signature Flavours
-</h2>
+<h2 class="section-title">Signature Flavours</h2>
 
-<div class="menu">
+<div class="menu-grid">
 
+
+<!-- CLASSIC -->
 
 <div class="card">
 
-<div class="drink">☕</div>
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80">
 
-<div class="card-body">
+<div class="card-content">
 
 <h3>Classic Coffee</h3>
 
-<p>
-Rich. Smooth. Timeless.
-</p>
+<p>Rich. Smooth. Timeless.</p>
 
-<div class="price">
-₹70
+<div class="price">₹70</div>
+
+<button class="select-btn"
+onclick="selectMenu('Classic Coffee',70)">
+Select
+</button>
+
+</div>
 </div>
 
-</div>
 
-</div>
-
-
+<!-- HAZELNUT -->
 
 <div class="card">
 
-<div class="drink">🌰</div>
+<img src="https://images.unsplash.com/photo-1578374173705-3e4d5a5a5b5a?auto=format&fit=crop&w=700&q=80">
 
-<div class="card-body">
+<div class="card-content">
 
 <h3>Hazelnut Coffee</h3>
 
-<p>
-Nutty. Creamy. Delicious.
-</p>
+<p>Nutty. Creamy. Delicious.</p>
 
-<div class="price">
-₹90
+<div class="price">₹90</div>
+
+<button class="select-btn"
+onclick="selectMenu('Hazelnut Coffee',90)">
+Select
+</button>
+
+</div>
 </div>
 
-</div>
 
-</div>
-
-
+<!-- OREO -->
 
 <div class="card">
 
-<div class="drink">🍪</div>
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80">
 
-<div class="card-body">
+<div class="card-content">
 
 <h3>Oreo Shake</h3>
 
-<p>
-Crunchy. Creamy. Iconic.
-</p>
+<p>Crunchy. Creamy. Iconic.</p>
 
-<div class="price">
-₹100
+<div class="price">₹100</div>
+
+<button class="select-btn"
+onclick="selectMenu('Oreo Shake',100)">
+Select
+</button>
+
+</div>
 </div>
 
-</div>
 
-</div>
-
-
+<!-- KITKAT -->
 
 <div class="card">
 
-<div class="drink">🍫</div>
+<img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=700&q=80">
 
-<div class="card-body">
+<div class="card-content">
 
 <h3>KitKat Shake</h3>
 
-<p>
-Choco. Crunchy. Irresistible.
-</p>
+<p>Choco. Crunchy. Irresistible.</p>
 
-<div class="price">
-₹100
+<div class="price">₹100</div>
+
+<button class="select-btn"
+onclick="selectMenu('KitKat Shake',100)">
+Select
+</button>
+
 </div>
-
 </div>
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- WHY BREWLISS -->
+<!-- WHY US -->
 
-<section id="why" class="why">
+<section class="why" id="why">
 
-<div class="small-title">
-WHY BREWLISS
-</div>
+<div class="small-title">WHY BREWLISS</div>
 
-<h2>
-More Than Just Coffee
-</h2>
+<h2 class="section-title">Made Different.</h2>
 
-<div class="features">
+<div class="why-grid">
 
-<div class="feature">
-<h3>🌿 Fresh Ingredients</h3>
+<div class="why-box">
+<h3>☕ Premium Coffee</h3>
 <p>
-Quality ingredients in every cup.
+Freshly prepared coffee with rich flavour and smooth taste.
 </p>
 </div>
 
-<div class="feature">
-<h3>✨ Custom Flavours</h3>
+<div class="why-box">
+<h3>✨ Unique Flavours</h3>
 <p>
-Make your drink your way.
+From Hazelnut to Oreo and KitKat — something for every mood.
 </p>
 </div>
 
-<div class="feature">
-<h3>☕ Made to Order</h3>
+<div class="why-box">
+<h3>❤️ Made For You</h3>
 <p>
-Freshly crafted for you.
-</p>
-</div>
-
-<div class="feature">
-<h3>₹ Affordable</h3>
-<p>
-Premium taste without the premium price.
+Choose your flavour, size and toppings and make your own drink.
 </p>
 </div>
 
@@ -528,7 +559,7 @@ Premium taste without the premium price.
 </section>
 
 
-<!-- CUSTOM COFFEE -->
+<!-- CUSTOMIZE -->
 
 <section id="custom">
 
@@ -536,17 +567,15 @@ Premium taste without the premium price.
 
 <div>
 
-<div class="small-title">
-CUSTOMIZE YOUR COFFEE
-</div>
+<div class="small-title">CUSTOMIZE YOUR COFFEE</div>
 
-<h2>
+<h2 class="section-title">
 Make It Yours.
 </h2>
 
-<p>
-Choose your flavour, size and toppings to create
-your own BREWLISS drink.
+<p style="font-size:18px;line-height:1.7;color:#666;">
+Choose your flavour, size and toppings to create your perfect
+BREWLISS drink.
 </p>
 
 </div>
@@ -554,55 +583,106 @@ your own BREWLISS drink.
 
 <div class="custom-box">
 
-<b>
-Choose your flavour
-</b>
+<h3>Choose your flavour</h3>
 
-<div class="choices">
+<div class="options">
 
-<button class="choice">
+<button class="option active"
+onclick="chooseFlavour('Classic Coffee',70,this)">
+Classic
+</button>
+
+<button class="option"
+onclick="chooseFlavour('Hazelnut',90,this)">
 Hazelnut
 </button>
 
-<button class="choice">
+<button class="option"
+onclick="chooseFlavour('Vanilla',85,this)">
 Vanilla
 </button>
 
-<button class="choice">
+<button class="option"
+onclick="chooseFlavour('Caramel',90,this)">
 Caramel
 </button>
 
-<button class="choice">
+<button class="option"
+onclick="chooseFlavour('Oreo',100,this)">
 Oreo
 </button>
 
-<button class="choice">
+<button class="option"
+onclick="chooseFlavour('KitKat',100,this)">
 KitKat
 </button>
 
 </div>
 
 
-<b>
+<div class="option-title">
 Choose size
-</b>
+</div>
 
-<div class="choices">
+<div class="options">
 
-<button class="choice">
+<button class="option active"
+onclick="chooseSize('Regular',0,this)">
 Regular
 </button>
 
-<button class="choice">
-Large
+<button class="option"
+onclick="chooseSize('Large',30,this)">
+Large +₹30
 </button>
 
 </div>
 
 
-<a href="#contact" class="btn primary">
+<div class="option-title">
+Choose toppings
+</div>
+
+<div class="options">
+
+<button class="option"
+onclick="toggleTopping('Whipped Cream',20,this)">
+Whipped Cream +₹20
+</button>
+
+<button class="option"
+onclick="toggleTopping('Chocolate',15,this)">
+Chocolate +₹15
+</button>
+
+<button class="option"
+onclick="toggleTopping('Oreo Crumbs',20,this)">
+Oreo Crumbs +₹20
+</button>
+
+</div>
+
+
+<div class="quantity">
+
+<button onclick="changeQuantity(-1)">−</button>
+
+<span id="quantity">1</span>
+
+<button onclick="changeQuantity(1)">+</button>
+
+</div>
+
+
+<div class="total">
+Total: ₹<span id="total">70</span>
+</div>
+
+
+<button class="btn btn-primary"
+onclick="placeOrder()">
 Order Custom Drink →
-</a>
+</button>
 
 </div>
 
@@ -613,25 +693,19 @@ Order Custom Drink →
 
 <!-- ABOUT -->
 
-<section id="about" class="about">
+<section class="about" id="about">
 
-<div class="small-title">
-ABOUT BREWLISS
-</div>
+<div class="small-title">ABOUT BREWLISS</div>
 
-<h2>
-Our Story
+<h2 class="section-title">
+Coffee With A Little More Bliss.
 </h2>
 
 <p>
-
-Brewliss started with a simple idea —
-make great coffee more exciting.
-
-We believe coffee is not just a drink;
-it's a moment of energy, comfort and
-a little more bliss in your day.
-
+BREWLISS is a coffee and flavour brand created for people who
+love experimenting with their favourite drinks. Our idea is simple:
+great coffee, exciting flavours and the freedom to create your own
+perfect cup.
 </p>
 
 </section>
@@ -639,71 +713,26 @@ a little more bliss in your day.
 
 <!-- CONTACT -->
 
-<section id="contact">
+<section class="contact" id="contact">
 
-<div class="contact">
+<div class="small-title">GET IN TOUCH</div>
 
+<h2 class="section-title">Let's Brew Something.</h2>
 
-<div>
+<p>📱 WhatsApp: 7014309933</p>
 
-<div class="small-title">
-GET IN TOUCH
-</div>
+<p>📸 Instagram: @brewliss</p>
 
-<h2>
-Order Now
-</h2>
+<p>📧 Email: brewliss@gmail.com</p>
 
-<p>
-Have a question or want to place an order?
-Send us a message.
-</p>
+<p>📍 Jaipur, Rajasthan</p>
 
-</div>
+<br>
 
-
-<form onsubmit="sendOrder(event)">
-
-<input
-id="name"
-type="text"
-placeholder="Your Name"
-required
->
-
-<input
-id="phone"
-type="tel"
-placeholder="Phone Number"
-required
->
-
-<select id="drink">
-
-<option>Classic Coffee</option>
-<option>Hazelnut Coffee</option>
-<option>Oreo Shake</option>
-<option>KitKat Shake</option>
-<option>Custom Drink</option>
-
-</select>
-
-<textarea
-id="message"
-rows="4"
-placeholder="Any special request?"
-></textarea>
-
-<button
-type="submit"
-class="btn primary"
->
-Send Order →
+<button class="btn btn-primary"
+onclick="contactWhatsApp()">
+Contact on WhatsApp →
 </button>
-
-</form>
-
-</div>
 
 </section>
 
@@ -712,35 +741,218 @@ Send Order →
 
 <footer>
 
-© 2026 BREWLISS
-<br>
-Brew Your Happiness. ☕
+© 2026 <span>BREWLISS</span> — Coffee & Flavours
 
 </footer>
 
 
 <script>
 
-function sendOrder(event){
+/* DEFAULT ORDER */
 
-event.preventDefault();
+let flavour = "Classic Coffee";
+let basePrice = 70;
 
-let name =
-document.getElementById("name").value;
+let size = "Regular";
+let sizePrice = 0;
 
-let phone =
-document.getElementById("phone").value;
+let toppings = [];
+let quantity = 1;
 
-let drink =
-document.getElementById("drink").value;
 
-alert(
-"Thanks " + name +
-"! Your " + drink +
-" order enquiry has been received."
+/* FLAVOUR */
+
+function chooseFlavour(name,price,button){
+
+flavour = name;
+basePrice = price;
+
+document.querySelectorAll(
+'.options button'
+).forEach(btn => {
+
+if(
+btn.parentElement === button.parentElement &&
+button.parentElement.previousElementSibling
+){
+btn.classList.remove('active');
+}
+
+});
+
+button.classList.add('active');
+
+updateTotal();
+
+}
+
+
+/* SIZE */
+
+function chooseSize(name,price,button){
+
+size = name;
+sizePrice = price;
+
+let parent = button.parentElement;
+
+parent.querySelectorAll('.option')
+.forEach(btn => btn.classList.remove('active'));
+
+button.classList.add('active');
+
+updateTotal();
+
+}
+
+
+/* TOPPINGS */
+
+function toggleTopping(name,price,button){
+
+let found = toppings.find(t => t.name === name);
+
+if(found){
+
+toppings = toppings.filter(
+t => t.name !== name
+);
+
+button.classList.remove('active');
+
+}else{
+
+toppings.push({
+name:name,
+price:price
+});
+
+button.classList.add('active');
+
+}
+
+updateTotal();
+
+}
+
+
+/* QUANTITY */
+
+function changeQuantity(amount){
+
+quantity += amount;
+
+if(quantity < 1){
+quantity = 1;
+}
+
+document.getElementById(
+'quantity'
+).innerText = quantity;
+
+updateTotal();
+
+}
+
+
+/* TOTAL */
+
+function updateTotal(){
+
+let toppingTotal = 0;
+
+toppings.forEach(t => {
+toppingTotal += t.price;
+});
+
+let singlePrice =
+basePrice +
+sizePrice +
+toppingTotal;
+
+let finalPrice =
+singlePrice * quantity;
+
+document.getElementById(
+'total'
+).innerText = finalPrice;
+
+}
+
+
+/* MENU SELECT */
+
+function selectMenu(name,price){
+
+flavour = name;
+basePrice = price;
+
+document.getElementById(
+'custom'
+).scrollIntoView({
+behavior:"smooth"
+});
+
+updateTotal();
+
+}
+
+
+/* ORDER */
+
+function placeOrder(){
+
+let toppingText =
+toppings.length > 0
+? toppings.map(t => t.name).join(", ")
+: "No toppings";
+
+let total =
+document.getElementById('total').innerText;
+
+let message =
+"Hello BREWLISS!%0A%0A" +
+"I want to order:%0A" +
+"☕ Flavour: " + flavour + "%0A" +
+"📏 Size: " + size + "%0A" +
+"🍫 Toppings: " + toppingText + "%0A" +
+"🔢 Quantity: " + quantity + "%0A" +
+"💰 Total: ₹" + total;
+
+let phone = "7014309933";
+
+window.open(
+"https://wa.me/" + phone +
+"?text=" + message,
+"_blank"
 );
 
 }
+
+
+/* CONTACT WHATSAPP */
+
+function contactWhatsApp(){
+
+let phone = "7014309933";
+
+let message =
+"Hello BREWLISS! I want to know more about your coffee.";
+
+window.open(
+"https://wa.me/" +
+phone +
+"?text=" +
+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+
+/* INITIAL TOTAL */
+
+updateTotal();
 
 </script>
 
