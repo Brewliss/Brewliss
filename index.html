@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BREWLISS | Coffee & Flavours</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f7f0e7;
+    color:#24140c;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(20,10,6,0.95);
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:4px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#e7bd7c;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:130px 8% 70px;
+    color:white;
+
+    background:
+    radial-gradient(circle at 75% 45%,#744321,#2b160c 38%,#0d0704 75%);
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.small-title{
+    color:#e7bd7c;
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(50px,8vw,90px);
+    line-height:.95;
+    margin:20px 0;
+}
+
+.hero h1 span{
+    color:#e7bd7c;
+    font-style:italic;
+}
+
+.hero p{
+    color:#ded3ca;
+    font-size:18px;
+    max-width:550px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.primary{
+    background:#e7bd7c;
+    color:#24140c;
+}
+
+.secondary{
+    border:1px solid white;
+    color:white;
+}
+
+/* SECTIONS */
+section{
+    padding:85px 7%;
+}
+
+h2{
+    font-family:Georgia,serif;
+    font-size:45px;
+    margin:8px 0 30px;
+}
+
+/* MENU */
+.menu{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(50,25,10,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.drink{
+    height:200px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:75px;
+    background:linear-gradient(135deg,#32180d,#b8763d);
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-body h3{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.card-body p{
+    color:#75645a;
+}
+
+.price{
+    font-size:19px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+/* WHY US */
+.why{
+    background:#24130b;
+    color:white;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.feature{
+    border-top:1px solid #a87d4c;
+    padding:20px 5px;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#d5c8be;
+}
+
+/* CUSTOM */
+.custom{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.custom-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(50,25,10,.1);
+}
+
+.choices{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:15px 0 25px;
+}
+
+.choice{
+    padding:10px 16px;
+    border:1px solid #cdbbab;
+    border-radius:25px;
+    background:white;
+    cursor:pointer;
+}
+
+.choice:hover{
+    background:#e7bd7c;
+}
+
+/* ABOUT */
+.about{
+    background:#180c07;
+    color:white;
+}
+
+.about p{
+    max-width:700px;
+    color:#d8cbc1;
+    font-size:18px;
+}
+
+/* CONTACT */
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+form{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #d5c5b8;
+    border-radius:10px;
+    font-size:15px;
+}
+
+textarea{
+    resize:none;
+}
+
+/* FOOTER */
+footer{
+    background:#0d0704;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav .links{
+        display:none;
+    }
+
+    .menu,
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .custom,
+    .contact{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    .menu,
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+BREWLISS
+</div>
+
+<div class="links">
+<a href="#menu">Menu</a>
+<a href="#why">Why Us</a>
+<a href="#custom">Customize</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="small-title">
+PREMIUM COFFEE • UNIQUE FLAVOURS • MADE FOR YOU
+</div>
+
+<h1>
+A Little More
+<span>Bliss</span>
+in Every Brew.
+</h1>
+
+<p>
+Rich coffee, exciting flavours and your own custom creation —
+all in one cup.
+</p>
+
+<div class="buttons">
+
+<a href="#menu" class="btn primary">
+Explore Menu →
+</a>
+
+<a href="#contact" class="btn secondary">
+Order Now
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- MENU -->
+
+<section id="menu">
+
+<div class="small-title">
+OUR MENU
+</div>
+
+<h2>
+Signature Flavours
+</h2>
+
+<div class="menu">
+
+
+<div class="card">
+
+<div class="drink">☕</div>
+
+<div class="card-body">
+
+<h3>Classic Coffee</h3>
+
+<p>
+Rich. Smooth. Timeless.
+</p>
+
+<div class="price">
+₹70
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="drink">🌰</div>
+
+<div class="card-body">
+
+<h3>Hazelnut Coffee</h3>
+
+<p>
+Nutty. Creamy. Delicious.
+</p>
+
+<div class="price">
+₹90
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="drink">🍪</div>
+
+<div class="card-body">
+
+<h3>Oreo Shake</h3>
+
+<p>
+Crunchy. Creamy. Iconic.
+</p>
+
+<div class="price">
+₹100
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="drink">🍫</div>
+
+<div class="card-body">
+
+<h3>KitKat Shake</h3>
+
+<p>
+Choco. Crunchy. Irresistible.
+</p>
+
+<div class="price">
+₹100
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- WHY BREWLISS -->
+
+<section id="why" class="why">
+
+<div class="small-title">
+WHY BREWLISS
+</div>
+
+<h2>
+More Than Just Coffee
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>🌿 Fresh Ingredients</h3>
+<p>
+Quality ingredients in every cup.
+</p>
+</div>
+
+<div class="feature">
+<h3>✨ Custom Flavours</h3>
+<p>
+Make your drink your way.
+</p>
+</div>
+
+<div class="feature">
+<h3>☕ Made to Order</h3>
+<p>
+Freshly crafted for you.
+</p>
+</div>
+
+<div class="feature">
+<h3>₹ Affordable</h3>
+<p>
+Premium taste without the premium price.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CUSTOM COFFEE -->
+
+<section id="custom">
+
+<div class="custom">
+
+<div>
+
+<div class="small-title">
+CUSTOMIZE YOUR COFFEE
+</div>
+
+<h2>
+Make It Yours.
+</h2>
+
+<p>
+Choose your flavour, size and toppings to create
+your own BREWLISS drink.
+</p>
+
+</div>
+
+
+<div class="custom-box">
+
+<b>
+Choose your flavour
+</b>
+
+<div class="choices">
+
+<button class="choice">
+Hazelnut
+</button>
+
+<button class="choice">
+Vanilla
+</button>
+
+<button class="choice">
+Caramel
+</button>
+
+<button class="choice">
+Oreo
+</button>
+
+<button class="choice">
+KitKat
+</button>
+
+</div>
+
+
+<b>
+Choose size
+</b>
+
+<div class="choices">
+
+<button class="choice">
+Regular
+</button>
+
+<button class="choice">
+Large
+</button>
+
+</div>
+
+
+<a href="#contact" class="btn primary">
+Order Custom Drink →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="small-title">
+ABOUT BREWLISS
+</div>
+
+<h2>
+Our Story
+</h2>
+
+<p>
+
+Brewliss started with a simple idea —
+make great coffee more exciting.
+
+We believe coffee is not just a drink;
+it's a moment of energy, comfort and
+a little more bliss in your day.
+
+</p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact">
+
+
+<div>
+
+<div class="small-title">
+GET IN TOUCH
+</div>
+
+<h2>
+Order Now
+</h2>
+
+<p>
+Have a question or want to place an order?
+Send us a message.
+</p>
+
+</div>
+
+
+<form onsubmit="sendOrder(event)">
+
+<input
+id="name"
+type="text"
+placeholder="Your Name"
+required
+>
+
+<input
+id="phone"
+type="tel"
+placeholder="Phone Number"
+required
+>
+
+<select id="drink">
+
+<option>Classic Coffee</option>
+<option>Hazelnut Coffee</option>
+<option>Oreo Shake</option>
+<option>KitKat Shake</option>
+<option>Custom Drink</option>
+
+</select>
+
+<textarea
+id="message"
+rows="4"
+placeholder="Any special request?"
+></textarea>
+
+<button
+type="submit"
+class="btn primary"
+>
+Send Order →
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 BREWLISS
+<br>
+Brew Your Happiness. ☕
+
+</footer>
+
+
+<script>
+
+function sendOrder(event){
+
+event.preventDefault();
+
+let name =
+document.getElementById("name").value;
+
+let phone =
+document.getElementById("phone").value;
+
+let drink =
+document.getElementById("drink").value;
+
+alert(
+"Thanks " + name +
+"! Your " + drink +
+" order enquiry has been received."
+);
+
+}
+
+</script>
+
+</body>
+</html>
